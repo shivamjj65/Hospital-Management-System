@@ -1,0 +1,94 @@
+<div class="page-wrapper bg-gra-02 p-b-100 font-poppins">
+
+  <div class="wrapper wrapper--w680">
+    <div class="card card-4">
+      <div class="card-body">
+        <div class="title">
+          <h2 class="title">Enter Patient Details
+          </h2>
+        </div>
+        <form autocomplete="off" #myForm="ngForm" (ngSubmit)="myForm.form.valid && submit(myForm)">
+          <div class="row row-space">
+
+            <input type="hidden" name="id" [value]="ps.patientData.id">
+
+            <div class="col-2">
+              <div class="input-group">
+                <label class="label">User Id
+                  <p class="text-danger idReq"
+                    *ngIf="patientUserId.invalid && (patientUserId.touched||patientUserId.dirty)">Required</p>
+                  <p class="text-danger idZero" *ngIf="patientUserId.value==0">User ID can't be zero</p>
+                </label>
+                <input class="input--style-4" value="reset" min="0" type="number" name="user_id" #patientUserId="ngModel"
+                  [(ngModel)]="ps.patientData.userId" required>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="input-group">
+                <label class="label">Full Name
+                  <p class="text-danger nameReq"
+                    *ngIf="patientName.invalid && (patientName.touched||patientName.dirty)">
+                    Required</p>
+                </label>
+                <input class="input--style-4" type="text" name="full_name" #patientName="ngModel"
+                  [(ngModel)]="ps.patientData.name" required>
+              </div>
+            </div>
+          </div>
+          <div class="row row-space">
+            <div class="col-2">
+              <div class="input-group">
+                <label class="label">Contact <p class="text-danger phReq"
+                    *ngIf="patientPhone.invalid && (patientPhone.touched||patientPhone.dirty)">
+                    Required</p></label>
+
+                <input class="input--style-4" type="tel" min="0" name="contact" #patientPhone="ngModel"
+                  [(ngModel)]="ps.patientData.phoneNumber" required>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="input-group">
+                <label class="label">Address <p class="text-danger addReq"
+                    *ngIf="patientAddress.invalid && (patientAddress.touched||patientAddress.dirty)">Required</p>
+                  </label>
+
+                <input class="input--style-4" type="text" name="address" #patientAddress="ngModel"
+                  [(ngModel)]="ps.patientData.address" required>
+              </div>
+            </div>
+          </div>
+          <div class="row row-space">
+            <div class="col-2">
+              <div class="input-group">
+                <label class="label">Gender <select class="form-control" name="gender" #gender="ngModel"
+                    [(ngModel)]="ps.patientData.gender" required>
+                    <option value="" selected disabled>Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Other</option>
+                  </select>
+                  <p class="text-danger genReq" *ngIf="gender.invalid && (gender.touched||gender.dirty)">Required</p>
+                </label>
+
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="input-group">
+                <label class="label">Date of Birth <input type="date" name="dob" class="form-control" #dob="ngModel"
+                    [(ngModel)]="ps.patientData.dateOfBirth" required>
+                  <p class="text-danger dobReq" *ngIf="dob.invalid && (dob.touched||dob.dirty)">Required</p>
+                </label>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="p-t-15">
+            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+            <button class="btn btn--radius-2 btn--red" (click)="cancel()">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

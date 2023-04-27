@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-family: 'Andika', 'Lato', sans-serif
+}
+
+ul ul {
+    margin-bottom: 0
+}
+
+a {
+    color: #3f6ad8;
+    text-decoration: none;
+    background-color: transparent
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline
+}
+
+a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none
+}
+
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
+    color: inherit;
+    text-decoration: none
+}
+
+a:not([href]):not([tabindex]):focus {
+    outline: 0
+}
+
+[type=button],
+[type=reset],
+[type=submit] {
+    -webkit-appearance: button
+}
+
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+    padding: 0;
+    border-style: none
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+[type=search] {
+    outline-offset: -2px;
+    -webkit-appearance: none
+}
+
+[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+::-webkit-file-upload-button {
+    font: inherit;
+    -webkit-appearance: button
+}
+
+[hidden] {
+    display: none !important
+}
+
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #dee2e6
+}
+
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important
+}
+
+.h-25 {
+    height: 25% !important
+}
+
+.h-50 {
+    height: 50% !important
+}
+
+.h-75 {
+    height: 75% !important
+}
+
+.h-100 {
+    height: 100% !important
+}
+
+a {
+    outline: 0 !important
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0
+}
+
+
+.header {
+    z-index: 10;
+    transition: all .2s;
+    background-color: #080f5b !important;
+    /* background-color: #77a6f7 !important; */
+    text-align: center;
+    flex: 1;
+    position: fixed;
+    width: 100%;
+    padding: 3px;
+    text-transform: uppercase;
+    font-weight: 800 !important;
+    color: #77a6f7;
+    font-family: Montserrat, Andika, Lato, sans-serif
+}
+
+.logo {
+    float: left;
+    padding-left: 60px;
+}
+
+.home-logo{
+    float: right;
+    padding-right: 30px;
+}
+
+.home-logo:hover{
+    cursor:pointer;
+}
+
+h3 {
+    font-family: Montserrat, Andika, Lato, sans-serif;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.fixed-header .app-main {
+    padding-top: 60px
+}
+
+.app-sidebar {
+    width: 280px;
+    display: flex;
+    z-index: 11;
+    overflow: hidden;
+    min-width: 280px;
+    position: relative;
+    flex: 0 0 280px;
+    margin-top: -60px;
+    padding-top: 60px;
+    transition: all .2s;
+    background-color: #77a6f7 !important;
+}
+
+.app-sidebar .app-sidebar__inner {
+    font-family: 'Andika';
+    /* padding: 2px 1.5rem 1.5rem */
+    padding-top: 10%;
+    text-align: center;
+    background-color: #77a6f7 !important;
+}
+
+.app-sidebar .scrollbar-sidebar {
+    z-index: 15;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #77a6f7 !important;
+}
+
+.app-sidebar.sidebar-shadow {
+    box-shadow: 7px 0 60px rgba(0, 0, 0, .05)
+}
+
+.app-sidebar__heading fa-icon{
+    margin: 10px;
+    font-size: 20px;
+}
+
+.vertical-nav-menu {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.vertical-nav-menu ul {
+    list-style: none;
+    margin: 0px;
+    padding: px;
+}
+
+.app-sidebar__heading {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: .75rem 0;
+    padding: 2px;
+    font-weight: 700;
+    color: #080f5b;
+    white-space: nowrap;
+    position: relative;
+}
+
+.vertical-nav-menu ul>li>a {
+    color: #0d19a3;
+    height: 2rem;
+    line-height: 2rem;
+    margin: 0px;
+    font-size: large;
+    font-weight: 300;
+    font-family: 'Oswald', sans-serif;
+}
+
+.vertical-nav-menu ul>li>a:hover {
+    color: #080f5b
+}
+
+
+.vertical-nav-menu:before {
+    opacity: 0;
+    transition: opacity .3s
+}
+
+.vertical-nav-menu li a {
+    display: block;
+    line-height: 2.4rem;
+    height: 2.4rem;
+    position: relative;
+    border-radius: .25rem;
+    color: #343a40;
+    white-space: nowrap;
+    transition: all .2s;
+    margin: .1rem 0
+}
+
+.vertical-nav-menu li a:hover {
+    background: #d3e3fc;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.fixed-sidebar .app-sidebar {
+    position: fixed;
+    height: 100vh
+}
+
+.fixed-sidebar .app-main .app-main__outer {
+    background: white;
+    border-radius: 10px;
+    z-index: 9;
+    /* padding-left: 280px; */
+    margin-left: 280px;
+}
+
+.app-main {
+    flex: 1;
+    display: flex;
+    z-index: 8;
+    position: relative
+}
+
+.app-main .app-main__outer {
+    border-radius: 10px;
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    z-index: 12
+}
+
+.app-main .app-main__inner {
+    padding: 30px 30px 0;
+    flex: 1
+}
+
+.app-theme-white.app-container {
+    background: #f1f4f6
+}
+
+.app-theme-white .app-sidebar {
+    background: #fff
+}
+
+.h-100 {
+    height: 100vh !important
+}

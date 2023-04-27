@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika&family=Lato:wght@300&display=swap');
+
+section {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.addPat{
+  float: right;
+  margin: auto;
+}
+
+
+a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+}
+
+a,
+a:hover {
+  text-decoration: none !important;
+}
+
+.content {
+  padding: 20px 0px;
+}
+
+h2 {
+  font-family: 'Andika', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.custom-table {
+  font-family: 'Lato', sans-serif;
+  min-width: 900px;
+}
+
+.custom-table thead tr,
+.custom-table thead th {
+  border-top: none;
+  border-bottom: none !important;
+  font-size: 20px;
+}
+
+.custom-table tbody th,
+.custom-table tbody td {
+  color: #777;
+  font-size: 17px;
+}
+
+.updateBtn {
+  border: 0px transparent;
+}
