@@ -24,7 +24,7 @@ export class AdminDashboardComponent {
 
   }
   homeClick(){
-    this.router.navigate(['admin/dashboard']);
+    this.router.navigate(['admin/home']);
   }
 
 }

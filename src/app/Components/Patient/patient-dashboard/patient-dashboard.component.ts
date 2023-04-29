@@ -23,6 +23,6 @@ export class PatientDashboardComponent {
 
   }
   homeClick(){
-    this.router.navigate(['patient/dashboard']);
+    this.router.navigate(['patient/home']);
   }
 }

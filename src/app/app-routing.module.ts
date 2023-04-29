@@ -7,67 +7,54 @@ import { GetDoctorsComponent } from './Components/Doctors/get-doctors/get-doctor
 import { AddDoctorsComponent } from './Components/Doctors/add-doctors/add-doctors.component';
 import { GetPatientComponent } from './Components/Patient/get-patient/get-patient.component';
 import { AddPatientComponent } from './Components/Patient/add-patient/add-patient.component';
+import { UpdatePatientComponent } from './Components/Patient/update-patient/update-patient.component';
+import { BookAppComponent } from './Components/Patient/book-app/book-app.component';
 import { GetUsersComponent } from './Components/Users/get-users/get-users.component';
 import { AddUsersComponent } from './Components/Users/add-users/add-users.component';
 import { PatDoctorComponent } from './Components/Patient/pat-doctor/pat-doctor.component';
-import { AdminHomeComponent } from './Components/Admin/admin-home/admin-home.component';
+import { DashboardHomeComponent } from './Components/dashboard-home/dashboard-home.component';
+import { UpdateDoctorComponent } from './Components/Doctors/update-doctor/update-doctor.component';
+import { BookAppointmentComponent } from './Components/Appointment/book-appointment/book-appointment.component';
+import { ShowAppointmentComponent } from './Components/Appointment/show-appointment/show-appointment.component';
+import { GenerateBillComponent } from './Components/Bills/generate-bill/generate-bill.component';
+import { ShowBillComponent } from './Components/Bills/show-bill/show-bill.component';
 
 const routes: Routes = [
-  { path: 'admin/dashboard', component: AdminDashboardComponent,
-    children:[
-      {path:'home',component:AdminHomeComponent},
-      {path:'get-patient',component:GetPatientComponent},
-      {path:'add-patient',component:AddPatientComponent},
-      {path:'get-doctor',component:GetDoctorsComponent},
-      {path:'add-doctor',component:AddDoctorsComponent},
-      {path:'get-user',component:GetUsersComponent},
-      // {path:'get-appointment',component:GetAppointmentComponent},
-      // {path:'get-bills',component:GetBillsComponent}
-    ]
-  },
   { path: 'admin', component: AdminDashboardComponent,
     children:[
+      {path:'home',component:DashboardHomeComponent},
       {path:'get-patient',component:GetPatientComponent},
       {path:'add-patient',component:AddPatientComponent},
+      {path:'update-patient',component:UpdatePatientComponent},
       {path:'get-doctor',component:GetDoctorsComponent},
       {path:'add-doctor',component:AddDoctorsComponent},
+      {path:'update-doctor',component:UpdateDoctorComponent},
       {path:'get-user',component:GetUsersComponent},
-      // {path:'get-appointment',component:GetAppointmentComponent},
-      // {path:'get-bills',component:GetBillsComponent}
+      {path:'book-app',component:BookAppComponent},
+      {path:'show-app',component:ShowAppointmentComponent},
+      {path:'gen-bill',component:GenerateBillComponent},
+      {path:'show-bill',component:ShowBillComponent}
     ]
   },
   
 
-
-  { path: 'doctor/dashboard', component: DoctorDashboardComponent,
-    children:[
-      {path:'get-patient',component:GetPatientComponent},
-      // {path:'get-appointment',component:GetAppointmentComponent}
-      ]
-  },
   { path: 'doctor', component: DoctorDashboardComponent,
     children:[
+      {path:'home',component:DashboardHomeComponent},
       {path:'get-patient',component:GetPatientComponent},
       // {path:'get-appointment',component:GetAppointmentComponent}
       ]
   },
 
 
-
-  { path: 'patient/dashboard', component: PatientDashboardComponent,
-    children:[
-      {path:'get-doctor',component:PatDoctorComponent},
-      // {path:'request-appointment',component:GetAppointmentComponent},
-      // {path:'get-prescription',component:GetPrescriptionComponent},
-      // {path:'get-bills',component:GetBillComponent}
-      ]
-  },
   { path: 'patient', component: PatientDashboardComponent,
     children:[
+      {path:'home',component:DashboardHomeComponent},
       {path:'get-doctor',component:PatDoctorComponent},
-      // {path:'request-appointment',component:GetAppointmentComponent},
+      {path:'book-app',component:BookAppointmentComponent},
       // {path:'get-prescription',component:GetPrescriptionComponent},
-      // {path:'get-bills',component:GetBillComponent}
+      {path:'gen-bill',component:GenerateBillComponent},
+      {path:'show-bill',component:ShowBillComponent}
       ]
   }
 

@@ -29,12 +29,13 @@ export class GetDoctorsComponent {
   }
   
   addDoctor(){
-    this.router.navigate(['admin/dashboard/add-doctor']);
+    this.router.navigate(['admin/add-doctor']);
   }
 
-  updateDoctor(){
-
-  }
+  updateDoctor(item:Doctor){
+    this.ds.updatedDoctorData = item;
+    this.router.navigate(['admin/update-doctor']);
+   }
 
   deleteDoctor(docId:number){
     this.ds.deleteDoctor(docId).subscribe(()=>{this.getDoctor();});

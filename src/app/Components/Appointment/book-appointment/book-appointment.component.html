@@ -1,0 +1,39 @@
+<!-- Form Section -->
+<section class="container form-custom">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form  #myForm="ngForm" (ngSubmit)="Onsubmit()">
+
+                <div class="form-group mb-2">
+                    <input type="hidden" name="id" [value]="appDataService.appData.id">
+                    <label for="patient-id">Patient ID:</label>
+                    
+                    <!-- <input type="number" placeholder="Enter Patient ID" class="form-control border border-1 border-dark" id="patient-id" name="patientId" #patientId="ngModel" [(ngModel)]="appDataService.appData.patientId" required> -->
+                
+                    <select class="form-control border border-1 border-dark" id="patientId" name="patientId" #patientId="ngModel" [(ngModel)]="appDataService.appData.patientId" required>
+                        <option selected disabled value="0">Select Patient Id</option>
+                        <option [value]="pId.id" *ngFor="let pId of appDataService.listPatientsClass">{{pId.id}}</option>
+                       
+                    </select>
+                    
+                    
+                </div>
+                <div class="form-group mb-2">
+                    <label for="doctorId">Doctor Name</label>
+                    <select class="form-control border border-1 border-dark" id="doctorId" name="doctorId" #doctorId="ngModel" [(ngModel)]="appDataService.appData.doctorId" required>
+                        <option selected disabled value="0">Select Doctor</option>
+                        <option [value]="doctorName.id" *ngFor="let doctorName of appDataService.listDoctorsClass">{{doctorName.name}}</option>
+                       
+                    </select>
+                </div>
+               
+                <div class="form-group mb-2">
+                    <label for="appointment-date">Appointment Date:</label>
+                    <input type="date" [min]="minDate"  class="form-control border border-1 border-dark" id="appointment-date" name="appointmentDate" [(ngModel)]="appDataService.appData.appointmentDate" #appointmentDate="ngModel"  required>
+                </div>
+                <button type="submit" [disabled]="!isValid()"  class="btn btn-primary mr-3">Book</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </form>
+        </div>
+    </div>
+</section>

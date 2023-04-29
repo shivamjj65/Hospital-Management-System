@@ -10,6 +10,7 @@ import { faPencil,faTrash,faPlus} from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./get-patient.component.css']
 })
 
+
 export class GetPatientComponent {
   faPen = faPencil;
   faTrash = faTrash;
@@ -29,12 +30,14 @@ export class GetPatientComponent {
   }
   
   addPatient(){
-    this.router.navigate(['admin/dashboard/add-patient']);
+    this.router.navigate(['admin/add-patient']);
   }
 
-  updatePatient(){
-    
-  }
+
+  updatePatient(item:Patient){
+    this.ps.patientData = item;
+    this.router.navigate(['admin/update-patient']);
+   }
 
   deletePatient(patId:number){
     this.ps.deletePatient(patId).subscribe(()=>{this.getPatient();});

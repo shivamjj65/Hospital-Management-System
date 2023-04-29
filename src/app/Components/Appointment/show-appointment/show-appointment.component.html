@@ -1,0 +1,43 @@
+    <!-- Table Section -->
+    <section class="container mt-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Appointment ID</th>
+                    <th>Patient Name</th>
+                    <th>Doctor Name</th>
+                    <th>Appointment Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr   *ngFor="let app of appointmentData">
+                    <td>{{app.id}}</td>
+                    <td>{{app.patient.name}}</td>
+                    <td>{{app.doctor.name}}</td>
+                    <td>{{app.appointmentDate | date:'yyy-MM-dd'}}</td>
+                    <td>{{app.status ?'Confirmed' : (app.status === false ? 'Cancelled' : 'Pending')}}</td>
+                    <td>
+                        
+                        <!-- <button type="button" *ngIf="app.status==='false'" class="btn btn-success btn-sm mr-2" [disabled]="app.status==true"  (click)="confirmAppointment(app.id)">Confirm</button> -->
+
+                        <!-- <button type="button" class="btn btn-success btn-sm mr-2" [disabled]="app.status==true"  (click)="confirmAppointment(app.id)">Confirm</button>
+                        <button type="button" class="btn btn-warning btn-sm ml-1" [disabled]="app.status==false" (click)="cancelAppointment(app.id)">Reject</button> -->
+                        <!-- <button type="button" class="btn btn-danger btn-sm ml-4" href="#"(click)="delete(app.id)">Delete</button> -->
+
+                        
+
+                         <button *ngIf="app.status ==null" (click)="confirmAppointment(app.id)" class="btn btn-success btn-sm mr-2">Confirm</button> 
+                         <button *ngIf="app.status ==true" (click)="cancelAppointment(app.id)" class="btn btn-warning btn-sm ml-1">Reject</button>
+                         <button *ngIf="app.status ==false" disabled>Cannot Change Status</button> 
+
+                        
+
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+
+    </section>

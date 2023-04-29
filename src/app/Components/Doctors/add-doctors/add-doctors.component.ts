@@ -12,7 +12,26 @@ import { Router } from '@angular/router';
 
 export class AddDoctorsComponent {
   constructor(public ds:DoctorApiService, private router:Router){}
-  ngOnInit(){}
+  ngOnInit(){
+    this.getDate();
+  }
+
+  minDate: any;
+  maxDate:any;
+  getDate(): void {
+    var date: any = new Date();
+    var todayDate: any = date.getDate();
+    if (todayDate < 10) {
+      todayDate = "0" + todayDate;
+    }
+    var month = date.getMonth() + 1;
+    if (month < 10) {
+      month = "0" + month;
+    }
+    var year: any = date.getFullYear();
+    this.minDate = year + "-" + month + "-" + todayDate;
+    this.maxDate = year-25 + '-' + month + '-' + todayDate;   // doctor age should be 25+
+  }
 
   submit(form:NgForm)
   {
@@ -38,11 +57,11 @@ export class AddDoctorsComponent {
     this.ds.getDoctor().subscribe(res=>{
       this.ds.doctorsList=res;
     });
-    this.router.navigate(['admin/dashboard/get-doctor']);
+    this.router.navigate(['admin/get-doctor']);
   }
 
   cancel(){
-    this.router.navigate(['admin/dashboard/get-doctor']);
+    this.router.navigate(['admin/get-doctor']);
   }
 
 }

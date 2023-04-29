@@ -29,8 +29,17 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule } from '@angular/material/dialog';
-import { AdminHomeComponent } from './Components/Admin/admin-home/admin-home.component';
 
+import { DashboardHomeComponent } from './Components/dashboard-home/dashboard-home.component';
+import { UpdatePatientComponent } from './Components/Patient/update-patient/update-patient.component';
+import { UpdateDoctorComponent } from './Components/Doctors/update-doctor/update-doctor.component';
+import { BookAppComponent } from './Components/Patient/book-app/book-app.component';
+import { BookAppointmentComponent } from './Components/Appointment/book-appointment/book-appointment.component';
+import { ShowAppointmentComponent } from './Components/Appointment/show-appointment/show-appointment.component';
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { GenerateBillComponent } from './Components/Bills/generate-bill/generate-bill.component';
+import { ShowBillComponent } from './Components/Bills/show-bill/show-bill.component';
 
 @NgModule({
   declarations: [
@@ -41,18 +50,25 @@ import { AdminHomeComponent } from './Components/Admin/admin-home/admin-home.com
     AdminDashboardComponent,
     PatientDashboardComponent,
     DoctorDashboardComponent,
-    AdminHomeComponent
+    DashboardHomeComponent,
+    UpdatePatientComponent,
+    UpdateDoctorComponent,
+    BookAppComponent,
+    BookAppointmentComponent,
+    ShowAppointmentComponent,
+    GenerateBillComponent,
+    ShowBillComponent
   ],
   imports: [
     ReactiveFormsModule,
-    MatDialogModule, MatInputModule, MatButtonModule, MatCardModule, MatFormFieldModule,
+    MatDialogModule, MatInputModule, MatButtonModule, MatCardModule, MatFormFieldModule,MatTableModule,
     FontAwesomeModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatTableModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

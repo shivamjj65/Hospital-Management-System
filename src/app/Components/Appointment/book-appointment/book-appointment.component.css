@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika&family=Lato:wght@300&display=swap');
+
+.form-custom {
+    font-family: 'Lato';
+    margin-top: 85px;
+    padding: 10px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-family: 'Lato';
+}
+
+.table {
+    box-shadow: 0 0 7px gray;
+    border-radius: 10px;
+}
+
+.table thead th {
+    font-weight: bold;
+    background-color: #018BA8;
+    color: #fff;
+    border-color: #0362A3;
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background-color: #f6f7f7;
+}
+
+
+.modal-custom {
+    /* background-image: linear-gradient(to right, #00b4db, #0083b0); */
+    /* background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%); */
+    /* background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% ); */
+    /* background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% ); */
+    background-image: radial-gradient(ellipse at top left,#009FA9  0%,rgba(181,197,216,1) 57%);
+}

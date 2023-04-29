@@ -85,7 +85,7 @@
               <div class="input-group">
                 <label class="label">Date of Birth<p class="text-danger idReq"
                     *ngIf="dateOfBirth.invalid && (dateOfBirth.touched||dateOfBirth.dirty)">Required</p>
-                  <input type="date" name="dob" class="form-control" #dateOfBirth="ngModel"
+                  <input type="date" [max]="maxDate" name="dob" class="form-control" #dateOfBirth="ngModel"
                     [(ngModel)]="ds.doctorData.dateOfBirth" required />
                 </label>
               </div>

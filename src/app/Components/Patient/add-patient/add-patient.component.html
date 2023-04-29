@@ -1,3 +1,70 @@
+<!-- <div class="container">
+  <form autocomplete="off" #myForm="ngForm" (ngSubmit)="myForm.form.valid && submit(myForm)">
+    <div class="row">
+      <h4>Enter Patient Details</h4>
+      <div class="input-group input-group-icon"><input type="text" placeholder="Full Name" />
+        <div class="input-icon"><i class="fa fa-user"></i></div>
+      </div>
+      <div class="input-group input-group-icon"><input type="email" placeholder="Email Adress" />
+        <div class="input-icon"><i class="fa fa-envelope"></i></div>
+      </div>
+      <div class="input-group input-group-icon"><input type="password" placeholder="Password" />
+        <div class="input-icon"><i class="fa fa-key"></i></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-half">
+        <h4>Date of Birth</h4>
+        <div class="input-group">
+          <div class="col-third"><input type="text" placeholder="DD" /></div>
+          <div class="col-third"><input type="text" placeholder="MM" /></div>
+          <div class="col-third"><input type="text" placeholder="YYYY" /></div>
+        </div>
+      </div>
+      <div class="col-half">
+        <h4>Gender</h4>
+        <div class="input-group"><input id="gender-male" type="radio" name="gender" value="male" /><label
+            for="gender-male">Male</label><input id="gender-female" type="radio" name="gender" value="female" /><label
+            for="gender-female">Female</label></div>
+      </div>
+    </div>
+    <div class="row">
+      <h4>Payment Details</h4>
+      <div class="input-group"><input id="payment-method-card" type="radio" name="payment-method" value="card"
+          checked="true" /><label for="payment-method-card"><span><i class="fa fa-cc-visa"></i>Credit
+            Card</span></label><input id="payment-method-paypal" type="radio" name="payment-method"
+          value="paypal" /><label for="payment-method-paypal"> <span><i
+              class="fa fa-cc-paypal"></i>Paypal</span></label></div>
+      <div class="input-group input-group-icon"><input type="text" placeholder="Card Number" />
+        <div class="input-icon"><i class="fa fa-credit-card"></i></div>
+      </div>
+      <div class="col-half">
+        <div class="input-group input-group-icon"><input type="text" placeholder="Card CVC" />
+          <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+      </div>
+      <div class="col-half">
+        <div class="input-group"><select>
+            <option>01 Jan</option>
+            <option>02 Jan</option>
+          </select><select>
+            <option>2015</option>
+            <option>2016</option>
+          </select></div>
+      </div>
+    </div>
+    <div class="row">
+      <h4>Terms and Conditions</h4>
+      <div class="input-group"><input id="terms" type="checkbox" /><label for="terms">I accept the terms and conditions
+          for signing up to this service, and hereby confirm I have read the privacy policy.</label></div>
+    </div>
+  </form>
+</div> -->
+
+
+
+
+
 <div class="page-wrapper bg-gra-02 p-b-100 font-poppins">
 
   <div class="wrapper wrapper--w680">
@@ -19,8 +86,8 @@
                     *ngIf="patientUserId.invalid && (patientUserId.touched||patientUserId.dirty)">Required</p>
                   <p class="text-danger idZero" *ngIf="patientUserId.value==0">User ID can't be zero</p>
                 </label>
-                <input class="input--style-4" value="reset" min="0" type="number" name="user_id" #patientUserId="ngModel"
-                  [(ngModel)]="ps.patientData.userId" required>
+                <input class="input--style-4" value="reset" min="0" type="number" name="user_id"
+                  #patientUserId="ngModel" [(ngModel)]="ps.patientData.userId" required>
               </div>
             </div>
             <div class="col-2">
@@ -50,7 +117,7 @@
               <div class="input-group">
                 <label class="label">Address <p class="text-danger addReq"
                     *ngIf="patientAddress.invalid && (patientAddress.touched||patientAddress.dirty)">Required</p>
-                  </label>
+                </label>
 
                 <input class="input--style-4" type="text" name="address" #patientAddress="ngModel"
                   [(ngModel)]="ps.patientData.address" required>
@@ -74,8 +141,8 @@
             </div>
             <div class="col-2">
               <div class="input-group">
-                <label class="label">Date of Birth <input type="date" name="dob" class="form-control" #dob="ngModel"
-                    [(ngModel)]="ps.patientData.dateOfBirth" required>
+                <label class="label">Date of Birth <input type="date" [max]="maxDate" name="dob" class="form-control"
+                    #dob="ngModel" [(ngModel)]="ps.patientData.dateOfBirth" required>
                   <p class="text-danger dobReq" *ngIf="dob.invalid && (dob.touched||dob.dirty)">Required</p>
                 </label>
 

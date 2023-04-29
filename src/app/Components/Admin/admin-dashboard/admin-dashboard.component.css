@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 
+
 ul {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -131,7 +132,7 @@ a {
 .header {
     z-index: 10;
     transition: all .2s;
-    background-color: #080f5b !important;
+    background-color: #FF6000 !important;
     /* background-color: #77a6f7 !important; */
     text-align: center;
     flex: 1;
@@ -140,7 +141,7 @@ a {
     padding: 3px;
     text-transform: uppercase;
     font-weight: 800 !important;
-    color: #77a6f7;
+    color: #FFE6C7;
     font-family: Montserrat, Andika, Lato, sans-serif
 }
 
@@ -149,13 +150,13 @@ a {
     padding-left: 60px;
 }
 
-.home-logo{
+.home-logo {
     float: right;
     padding-right: 30px;
 }
 
-.home-logo:hover{
-    cursor:pointer;
+.home-logo:hover {
+    cursor: pointer;
 }
 
 h3 {
@@ -180,7 +181,7 @@ h3 {
     margin-top: -60px;
     padding-top: 60px;
     transition: all .2s;
-    background-color: #77a6f7 !important;
+    background-color: #FFA559 !important;
 }
 
 .app-sidebar .app-sidebar__inner {
@@ -188,21 +189,21 @@ h3 {
     /* padding: 2px 1.5rem 1.5rem */
     padding-top: 10%;
     text-align: center;
-    background-color: #77a6f7 !important;
+    background-color: #FFA559 !important;
 }
 
 .app-sidebar .scrollbar-sidebar {
     z-index: 15;
     width: 100%;
     border-radius: 20px;
-    background-color: #77a6f7 !important;
+    background-color: #FFA559 !important;
 }
 
 .app-sidebar.sidebar-shadow {
     box-shadow: 7px 0 60px rgba(0, 0, 0, .05)
 }
 
-.app-sidebar__heading fa-icon{
+.app-sidebar__heading fa-icon {
     margin: 10px;
     font-size: 20px;
 }
@@ -227,13 +228,13 @@ h3 {
     margin: .75rem 0;
     padding: 2px;
     font-weight: 700;
-    color: #080f5b;
+    color: #454545;
     white-space: nowrap;
     position: relative;
 }
 
 .vertical-nav-menu ul>li>a {
-    color: #0d19a3;
+    color: #454545;
     height: 2rem;
     line-height: 2rem;
     margin: 0px;
@@ -265,7 +266,7 @@ h3 {
 }
 
 .vertical-nav-menu li a:hover {
-    background: #d3e3fc;
+    background: #FFE6C7;
     text-decoration: none;
     cursor: pointer;
 }

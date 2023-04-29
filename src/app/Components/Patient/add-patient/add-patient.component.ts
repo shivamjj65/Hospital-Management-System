@@ -12,12 +12,31 @@ import { Router } from '@angular/router';
 })
 
 export class AddPatientComponent {
-  constructor(public ps:PatientApiService, private router:Router){}
-  ngOnInit(){}
+  constructor(public ps: PatientApiService, private router: Router) { }
+  ngOnInit() {
+    this.getDate();
+  }
 
-  submit(form:NgForm)
-  {
-    if(this.ps.patientData.id==0){
+  minDate: any;
+  maxDate:any;
+  getDate(): void {
+    var date: any = new Date();
+    var todayDate: any = date.getDate();
+    if (todayDate < 10) {
+      todayDate = "0" + todayDate;
+    }
+    var month = date.getMonth() + 1;
+    if (month < 10) {
+      month = "0" + month;
+    }
+
+    var year: any = date.getFullYear();
+    this.minDate = year + "-" + month + "-" + todayDate;
+    this.maxDate = year + '-' + month + '-' + todayDate;
+  }
+
+  submit(form: NgForm) {
+    if (this.ps.patientData.id == 0) {
       this.insert(form);
     }
     // else{
@@ -25,26 +44,25 @@ export class AddPatientComponent {
     // }
   }
 
-  insert(myForm:NgForm)
-  {
+  insert(myForm: NgForm) {
     this.ps.postPatient()
     this.resetForm(myForm);
     this.refreshData();
   }
 
-  resetForm(myForm:NgForm){
+  resetForm(myForm: NgForm) {
     myForm.form.reset();
-    this.ps.patientData=new Patient();
+    this.ps.patientData = new Patient();
   }
 
-  refreshData(){
-    this.ps.getPatient().subscribe(res=>{
-      this.ps.patientsList=res;
+  refreshData() {
+    this.ps.getPatient().subscribe(res => {
+      this.ps.patientsList = res;
     });
-    this.router.navigate(['admin/dashboard/get-patient']);
+    this.router.navigate(['admin/get-patient']);
   }
 
-  cancel(){
-    this.router.navigate(['admin/dashboard/get-patient']);
+  cancel() {
+    this.router.navigate(['admin/get-patient']);
   }
 }
