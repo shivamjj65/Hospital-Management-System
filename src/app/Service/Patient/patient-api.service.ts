@@ -13,10 +13,12 @@ export class PatientApiService {
   // get list of Patient data and store into patientsList
   patientsList:Patient[]=[]; //for getting list patient 
   
+
   getPatient():Observable<Patient[]>
   {// api to fetch data and display in table
     return this.http.get<Patient[]>(this.url);
   }
+
 
   // When new Patient to be added
   // get data from form and store into patientData and post it into db via api
@@ -36,9 +38,23 @@ export class PatientApiService {
     );
   }
 
-  updatePatient():Observable<Patient>{
-    return this.http.patch<Patient>(`${this.url}/${this.patientData.id}`,this.patientData);
+  patData:Patient = new Patient();  // data from get-patient row will be stored her
+  updatePatient(){
+    return this.http.put("https://localhost:7287/api/Patients/"+this.patientData.id,this.patientData).subscribe(
+      (response) => {                           //Next callback
+        console.log('Updated',response);
+        alert('Data Updated');
+      },
+      (error) => {    
+        if(error.status==405)
+        {
+          alert("Update Failed !")
+        }                          //Error callback
+        console.error('Error caught in component',error.status);
+      }
+    );
   }
+
 
   deletePatient(patId:number){
     return this.http.delete(`${this.url}/${patId}`);

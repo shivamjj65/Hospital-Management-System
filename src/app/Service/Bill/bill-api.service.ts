@@ -1,0 +1,56 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Appointment, Bill, Doctor, Patient, Prescription, User } from 'src/app/Models/bill';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class BillApiService {
+
+  listBill1: any[] = [];
+
+  constructor(private myhttp: HttpClient) { }
+
+  billUrl: string = 'https://localhost:7287/api/Bills';
+  prescriptionUrl: string = 'https://localhost:7287/api/Prescriptions';
+  appointmentUrl: string = 'https://localhost:7287/api/Appointments';
+  doctorUrl: string = 'https://localhost:7287/api/Doctors';
+  patientUrl: string = 'https://localhost:7287/api/Patients';
+  userUrl: string = 'https://localhost:7287/api/Users';
+
+
+  billlData: any[] = [];
+  //listBill:Bill[]=[];
+  listPrescription: Prescription[] = [];
+  listAppointment: Appointment[] = [];
+  listDoctor: Doctor[] = [];
+  listPatient: Patient[] = [];
+  listUser: User[] = [];
+
+  patient: Patient = new Patient();
+  doctor: Doctor = new Doctor();
+  doctorData: Doctor = new Doctor();
+  billData: Bill = new Bill(); // for post and insert
+  appointmentData: Appointment = new Appointment();
+  patientData: Patient = new Patient();
+
+  saveBill() {
+    return this.myhttp.post(this.billUrl, this.billData);
+  }
+  updateBill() {
+    return this.myhttp.put(`${this.billUrl}/${this.billData.id}`, this.billData);
+  }
+
+  getBill(): Observable<any> {
+    return this.myhttp.get<any>(this.billUrl);
+  }
+
+  getAppointment(): Observable<any> {
+    return this.myhttp.get<any>(this.appointmentUrl);
+  }
+
+  deleteBill(id: number) {
+    return this.myhttp.delete(`${this.billUrl}/${id}`);
+  }
+}

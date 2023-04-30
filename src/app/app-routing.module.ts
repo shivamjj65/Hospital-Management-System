@@ -32,8 +32,8 @@ const routes: Routes = [
       {path:'get-user',component:GetUsersComponent},
       {path:'book-app',component:BookAppComponent},
       {path:'show-app',component:ShowAppointmentComponent},
-      {path:'gen-bill',component:GenerateBillComponent},
-      {path:'show-bill',component:ShowBillComponent}
+      {path:'add-bill',component:GenerateBillComponent},
+      {path:'get-bill',component:ShowBillComponent}
     ]
   },
   
@@ -42,7 +42,7 @@ const routes: Routes = [
     children:[
       {path:'home',component:DashboardHomeComponent},
       {path:'get-patient',component:GetPatientComponent},
-      // {path:'get-appointment',component:GetAppointmentComponent}
+      {path:'show-app',component:ShowAppointmentComponent}
       ]
   },
 
@@ -53,7 +53,6 @@ const routes: Routes = [
       {path:'get-doctor',component:PatDoctorComponent},
       {path:'book-app',component:BookAppointmentComponent},
       // {path:'get-prescription',component:GetPrescriptionComponent},
-      {path:'gen-bill',component:GenerateBillComponent},
       {path:'show-bill',component:ShowBillComponent}
       ]
   }

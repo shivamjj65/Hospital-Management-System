@@ -4,6 +4,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DatePipe } from '@angular/common';
 
 import { GetDoctorsComponent } from './Components/Doctors/get-doctors/get-doctors.component';
 import { AddDoctorsComponent } from './Components/Doctors/add-doctors/add-doctors.component';
@@ -40,6 +41,7 @@ import { ShowAppointmentComponent } from './Components/Appointment/show-appointm
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { GenerateBillComponent } from './Components/Bills/generate-bill/generate-bill.component';
 import { ShowBillComponent } from './Components/Bills/show-bill/show-bill.component';
+import { ShowDocAppointmentComponent } from './Components/Appointment/show-doc-appointment/show-doc-appointment.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { ShowBillComponent } from './Components/Bills/show-bill/show-bill.compon
     BookAppointmentComponent,
     ShowAppointmentComponent,
     GenerateBillComponent,
-    ShowBillComponent
+    ShowBillComponent,
+    ShowDocAppointmentComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -70,7 +73,9 @@ import { ShowBillComponent } from './Components/Bills/show-bill/show-bill.compon
     BrowserAnimationsModule,
     Ng2SearchPipeModule
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -37,8 +37,21 @@ export class DoctorApiService {
     );
   }
 
-  updateDoctor():Observable<Doctor>{
-    return this.http.patch<Doctor>(`${this.url}/${this.doctorData.id}`,this.doctorData);
+  updatedDoctorData:Doctor = new Doctor();
+  updateDoctor(){
+    return this.http.put("https://localhost:7287/api/Doctors/"+this.updatedDoctorData.id,this.updatedDoctorData).subscribe(
+      (response) => {                           //Next callback
+        console.log('Updated',response);
+        alert('Data Updated');
+      },
+      (error) => {    
+        if(error.status==405)
+        {
+          alert("Update Failed !")
+        }                          //Error callback
+        console.error('Error caught in component',error.status);
+      }
+    );
   }
 
   deleteDoctor(docId:number){
