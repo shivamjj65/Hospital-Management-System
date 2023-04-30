@@ -38,6 +38,9 @@ export class GetDoctorsComponent {
    }
 
   deleteDoctor(docId:number){
-    this.ds.deleteDoctor(docId).subscribe(()=>{this.getDoctor();});
+    if(confirm('Are you really want to delete this data'))
+    {
+      this.ds.deleteDoctor(docId).subscribe(()=>{this.getDoctor();});
+    }
   }
 }

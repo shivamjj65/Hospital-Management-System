@@ -109,7 +109,7 @@
                     *ngIf="patientPhone.invalid && (patientPhone.touched||patientPhone.dirty)">
                     Required</p></label>
 
-                <input class="input--style-4" type="tel" min="0" name="contact" #patientPhone="ngModel"
+                <input class="input--style-4" type="tel" min="0" name="contact" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" #patientPhone="ngModel"
                   [(ngModel)]="ps.patientData.phoneNumber" required>
               </div>
             </div>
@@ -127,7 +127,8 @@
           <div class="row row-space">
             <div class="col-2">
               <div class="input-group">
-                <label class="label">Gender <select class="form-control" name="gender" #gender="ngModel"
+                <label class="label">Gender 
+                  <select class="form-control" name="gender" #gender="ngModel"
                     [(ngModel)]="ps.patientData.gender" required>
                     <option value="" selected disabled>Select Gender</option>
                     <option value="Male">Male</option>

@@ -4,6 +4,10 @@
   padding: 0px;
 }
 
+select, option, input{
+  background: #FFE6C7;
+}
+
 .title{
   text-align: center;
 }
@@ -331,7 +335,7 @@
   
   .input--style-4 {
     line-height: 50px;
-    background: #fafafa;
+    background: #FFE6C7;
     -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
     -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
     box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);

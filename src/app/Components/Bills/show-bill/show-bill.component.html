@@ -1,1 +1,40 @@
-<p>show-bill works!</p>
+<section>
+    <div class="content">
+      <div class="container">
+        <div class="title">
+          <h2 class="mb-5">Bills</h2>
+          
+        </div>
+        <div class="table-responsive">
+          <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Patient Name</th>
+                    <th>Doctor Name</th>
+                    <th>Date</th>
+                    <th>Doctor Fees</th>
+                    <th>Other Charges</th>
+                    <th>Total</th>
+                    <th><a title="Add Doctor" class="addDoc" (click)='addBill()'><fa-icon [icon]="faPlus"></fa-icon></a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let b of billServices.listBill1">
+                    <td>{{ b.id }}</td>
+                    <td>{{ b.patient.name }}</td>
+                    <td>{{ b.doctor.name }}</td>
+                    <td>{{ b.billDate | date : "yyyy-MM-dd" }}</td>
+                    <td>{{ b.doctor.fees | currency:'INR':'symbol-narrow'}}</td>
+                    <td>{{ b.amount |currency:'INR':'symbol-narrow' }}</td>
+                    <td>{{ b.doctor.fees + b.amount | currency:'INR':'symbol-narrow' }}</td>
+                    <td><a title="Update" (click)='populateBill(b)'><fa-icon [icon]="faPen"></fa-icon></a></td>
+                    <td><a title="Delete" (click)='delete(b.id)'><fa-icon [icon]="faTrash"></fa-icon></a></td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+

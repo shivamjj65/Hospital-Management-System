@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Patient } from 'src/app/Models/patient';
 import { PatientApiService } from 'src/app/Service/Patient/patient-api.service';
-import { faPencil,faTrash,faPlus} from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-get-patient',
@@ -16,30 +16,31 @@ export class GetPatientComponent {
   faTrash = faTrash;
   faPlus = faPlus;
 
-  constructor(public ps:PatientApiService, private router:Router) 
-  {
+  constructor(public ps: PatientApiService, private router: Router) {
     // this.data.getDoctorData().subscribe(data => {console.log(data);this.doctorsList=data});
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.getPatient()
   }
 
-  getPatient(){
-    this.ps.getPatient().subscribe(data => {this.ps.patientsList=data});
+  getPatient() {
+    this.ps.getPatient().subscribe(data => { this.ps.patientsList = data });
   }
-  
-  addPatient(){
+
+  addPatient() {
     this.router.navigate(['admin/add-patient']);
   }
 
 
-  updatePatient(item:Patient){
+  updatePatient(item: Patient) {
     this.ps.patientData = item;
     this.router.navigate(['admin/update-patient']);
-   }
+  }
 
-  deletePatient(patId:number){
-    this.ps.deletePatient(patId).subscribe(()=>{this.getPatient();});
+  deletePatient(patId: number) {
+    if (confirm('Are you really want to delete this data')) {
+      this.ps.deletePatient(patId).subscribe(() => { this.getPatient(); });
+    }
   }
 }
