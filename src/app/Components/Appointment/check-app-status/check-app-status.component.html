@@ -1,0 +1,24 @@
+<section class="container mt-5">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Appointment ID</th>
+                <th>Doctor Name</th>
+                <th>Appointment Date</th>
+                <th>Status</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr   *ngFor="let app of appointmentData">
+                <td>{{app.id}}</td>
+                <td>{{app.doctor.name}}</td>
+                <td>{{app.appointmentDate | date:'yyy-MM-dd'}}</td>
+                <td>{{app.status ?'Confirmed' : (app.status === false ? 'Cancelled' : 'Pending')}}</td>
+              
+            </tr>
+        
+        </tbody>
+    </table>
+
+</section>

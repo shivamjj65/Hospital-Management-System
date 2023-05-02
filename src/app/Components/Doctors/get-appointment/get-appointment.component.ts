@@ -4,13 +4,14 @@ import { AppointmentApiService } from 'src/app/Service/Appointment/appointment-a
 import { Router } from '@angular/router';
 import { faThumbsUp,faXmark,faPlus, faTrash} from '@fortawesome/free-solid-svg-icons';
 
-@Component({
-  selector: 'app-show-appointment',
-  templateUrl: './show-appointment.component.html',
-  styleUrls: ['./show-appointment.component.css'],
-})
-export class ShowAppointmentComponent {
 
+@Component({
+  selector: 'app-get-appointment',
+  templateUrl: './get-appointment.component.html',
+  styleUrls: ['./get-appointment.component.css']
+})
+
+export class GetAppointmentComponent {
   faApprove = faThumbsUp;
   faReject = faXmark;
   faPlus = faPlus;

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppointmentClass } from 'src/app/Models/appointment';
 import { AppointmentApiService } from 'src/app/Service/Appointment/appointment-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-appointment',
@@ -15,7 +16,7 @@ export class BookAppointmentComponent {
   data: any[] = [];
 
 
-  constructor(public appDataService: AppointmentApiService) {
+  constructor(public appDataService: AppointmentApiService,private router:Router) {
     this.appDataService.getAppointments().subscribe(data => {
       //console.log(data);
       this.appointmentData = data;
@@ -58,12 +59,7 @@ export class BookAppointmentComponent {
   refreshData() {
     this.appDataService.getAppointments().subscribe(data => {
       console.log(data);
-      this.appointmentData = data;
-    },
-      err => {
-        alert('Unable to delete the record..');
-
-      }
+      this.appointmentData = data;}
     );
   }
 
@@ -89,14 +85,12 @@ export class BookAppointmentComponent {
     this.appDataService.bookAppointment(this.appDataService.appData).subscribe(res => {
       alert('Booking Successful')
       this.appDataService.appData = new AppointmentClass();
-
       this.refreshData();
     },
       ere => {
         alert('Enter Correct Patient Id');
 
       });
-
   }
 
   edit(appData: AppointmentClass) {

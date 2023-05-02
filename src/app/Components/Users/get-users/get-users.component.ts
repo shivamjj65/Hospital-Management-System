@@ -26,6 +26,10 @@ export class GetUsersComponent {
   getUser(){
     this.us.getUser().subscribe(data => {this.us.usersList=data});
   }
+
+  // getUser(){
+  //   this.us.getUser().subscribe(data => {console.log(data)});
+  // }
   
   deleteUser(userId:number){
     this.us.deleteUser(userId).subscribe(()=>{this.getUser();});

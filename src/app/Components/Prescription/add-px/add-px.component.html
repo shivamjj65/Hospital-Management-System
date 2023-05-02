@@ -1,0 +1,110 @@
+<div class="container">
+    <div class="formAdd">
+        <form autocomplete="off" #myForm="ngForm" (ngSubmit)="myForm.form.valid && submit(myForm) ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <input type="hidden" name="id" [value]="ps.prescriptionData.id">
+                        <label for="name">Doctor Id</label>
+                        <div *ngIf="doctorId.invalid &&(doctorId.touched || doctorId.dirty)" class="float-right">
+                            <p class="text-danger">Required</p>
+                        </div>
+                        <input type="text" name="doctorId" class="form-control" placeholder="doctor id"
+                            #doctorId="ngModel" [(ngModel)]="ps.prescriptionData.doctorId" (keyup)="displayName()"
+                            required>
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <label for="name">Appointment Id</label>
+                        <div *ngIf="appointmentId.invalid &&(appointmentId.touched || appointmentId.dirty)"
+                            class="float-right">
+                            <p class="text-danger">Required</p>
+                        </div>
+                        <input type="text" name="appointmentId" class="form-control" placeholder="appointmentId"
+                            #appointmentId="ngModel" [(ngModel)]="ps.prescriptionData.appointmentId"
+                            (keyup)="validation()" required>
+                    </div>
+
+
+
+
+                    <div class="col-md-3">
+                        <label for="date" class="float-left">Prescription Date</label>
+
+                        <div *ngIf="prescriptionDate.invalid &&(prescriptionDate.touched || prescriptionDate.dirty)"
+                            class="float-right">
+                            <p class="text-danger">Required</p>
+                        </div>
+
+                        <input type="date" min="{{today | date:'yyyy-MM-dd'}}" name="prescriptionDate"
+                            class="form-control" placeholder="Enter Date" #prescriptionDate="ngModel"
+                            [(ngModel)]="ps.prescriptionData.prescriptionDate " required>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <label for="name" class="label float-left">Patient Id</label>
+                        <div *ngIf="patientId.touched " class="float-right">
+                            <p class="text-danger">Required</p>
+                        </div>
+
+
+                        <input type="text" name="patientId" class="form-control" placeholder="patientId"
+                            #patientId="ngModel" [(ngModel)]="ps.prescriptionData.patientId" (keyup)="patdetails()"
+                            required>
+                    </div>
+
+
+
+
+
+
+                    <div class="col-md-11">
+                        <label for="name">prescription</label>
+                        <div *ngIf="prescriptionDetails.invalid &&(prescriptionDetails.touched || prescriptionDetails.dirty)"
+                            class="float-right">
+                            <p class="text-danger">Required</p>
+                        </div>
+                        <input type="text" name="prescriptionDetails" class="form-control" placeholder="details"
+                            #prescriptionDetails="ngModel" [(ngModel)]="ps.prescriptionData.prescriptionDetails"
+                            required>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-10"></div>
+                        <div class="col-md-1"></div>
+                        <button type="submit" class="btn btn-success btn-block mr-5"
+                            [disabled]="myForm.invalid">Add</button>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-10"></div>
+                        <div class="col-md-1"></div>
+                        <button type="reset" class="btn btn-danger btn-block">reset</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<div>
+    <table class="table table-hover">
+        <thead>
+            <th>Patient Name</th>
+            <th>Gender</th>
+            <th>Phone No.</th>
+        </thead>
+
+        <th>{{ps.patientData.name}}</th>
+        <th>{{ps.patientData.gender}}</th>
+        <th>{{ps.patientData.phoneNumber}}</th>
+    </table>
+</div>

@@ -4,6 +4,7 @@ import { BillApiService } from 'src/app/Service/Bill/bill-api.service';
 import { NgForm } from '@angular/forms';
 import { NgModel } from '@angular/forms';
 import { Appointment, Bill, Doctor, Patient } from 'src/app/Models/bill';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-generate-bill',
@@ -14,7 +15,7 @@ import { Appointment, Bill, Doctor, Patient } from 'src/app/Models/bill';
 export class GenerateBillComponent {
   today: Date = new Date();
   errorMessage: string;
-  constructor(public billService: BillApiService, private http: HttpClient) { }
+  constructor(public billService: BillApiService, private http: HttpClient, private router:Router ) { }
   ngOnInit(): void {
     this.billService.getAppointment().subscribe(data => {
       this.billService.listAppointment = data;
@@ -101,5 +102,6 @@ export class GenerateBillComponent {
     this.billService.getBill().subscribe(res => {
       this.billService.listBill1 = res;
     });
+    this.router.navigate(['admin/get-bill']);
   }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { faHeartbeat, faCog, faHouse, faUserPen, faUserDoctor, faBed,faCalendarCheck, faFilePrescription, faIndianRupeeSign} from '@fortawesome/free-solid-svg-icons';
+import { faHeartbeat, faCog, faHouse, faUserPen, faUserDoctor, faBed,faCalendarCheck, faFilePrescription, faIndianRupeeSign, faSignOut} from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/Service/Authorization/auth.service';
 
 @Component({
   selector: 'app-doctor-dashboard',
@@ -17,12 +18,16 @@ export class DoctorDashboardComponent {
   faApp = faCalendarCheck;
   faPx = faFilePrescription;
   faRs = faIndianRupeeSign;
+  faLogout=faSignOut;
   
-  constructor(private router:Router)
+  constructor(private router:Router, private auth:AuthService)
   {
 
   }
   homeClick(){
     this.router.navigate(['doctor/home']);
+  }
+  logout(){
+    this.auth.signOut();
   }
 }

@@ -28,7 +28,7 @@
                     <td>{{ b.doctor.fees | currency:'INR':'symbol-narrow'}}</td>
                     <td>{{ b.amount |currency:'INR':'symbol-narrow' }}</td>
                     <td>{{ b.doctor.fees + b.amount | currency:'INR':'symbol-narrow' }}</td>
-                    <td><a title="Update" (click)='populateBill(b)'><fa-icon [icon]="faPen"></fa-icon></a></td>
+                    <!-- <td><a title="Update" (click)='populateBill(b)'><fa-icon [icon]="faPen"></fa-icon></a></td> -->
                     <td><a title="Delete" (click)='delete(b.id)'><fa-icon [icon]="faTrash"></fa-icon></a></td>
                 </tr>
             </tbody>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DoctorApiService } from 'src/app/Service/Doctor/doctor-api.service';
+import { UserApiService } from 'src/app/Service/User/user-api.service';
 import { Doctor } from 'src/app/Models/doctor';
 import { Router } from '@angular/router';
 
@@ -11,7 +12,8 @@ import { Router } from '@angular/router';
 })
 
 export class AddDoctorsComponent {
-  constructor(public ds:DoctorApiService, private router:Router){}
+  constructor(public us:UserApiService, public ds:DoctorApiService, private router:Router){}
+  
   ngOnInit(){
     this.getDate();
   }
@@ -44,8 +46,16 @@ export class AddDoctorsComponent {
   insert(myForm:NgForm)
   {
     this.ds.postDoctor()
+    this.ds.getDoctor().subscribe(res=>{
+      this.ds.doctorsList=res;
+    });
+    this.updateRoleToDoc();
     this.resetForm(myForm);
     this.refreshData();
+  }
+
+  updateRoleToDoc(){
+    
   }
 
   resetForm(myForm:NgForm){

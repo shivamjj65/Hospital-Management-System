@@ -1,7 +1,7 @@
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
            
     <div class="header">
-        <h3 class="title"><a class="logo"><fa-icon [icon]="faHeart"></fa-icon>HMS</a>Patient Dashboard<a class="home-logo" (click)="homeClick()"><fa-icon [icon]="faHome"></fa-icon></a></h3>
+        <h3 class="title"><a class="logo"><fa-icon [icon]="faHeart"></fa-icon>HMS</a>Patient Dashboard<a class="home-logo" (click)="homeClick()"><fa-icon [icon]="faHome"></fa-icon></a><a class="home-logo" (click)="logout()"><fa-icon [icon]="faLogout"></fa-icon></a></h3>
     </div>
 
 <div class="app-main">
@@ -16,6 +16,11 @@
                             <li>
                                 <a routerLink="book-app" routerLinkActive="active-link">
                                     Book Appointment
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="check-app" routerLinkActive="active-link">
+                                    Check Appointment Status
                                 </a>
                             </li>
                         </ul>
@@ -36,14 +41,14 @@
                     <li>
                         <ul>
                             <li>
-                                <a>
+                                <a routerLink="get-px" routerLinkActive="active-link">
                                     View My Prescriptions
                                 </a>
                             </li>
                         </ul>
                     </li>
 
-                    <li class="app-sidebar__heading"><fa-icon [icon]="faRs"></fa-icon>Bills</li>
+                    <!-- <li class="app-sidebar__heading"><fa-icon [icon]="faRs"></fa-icon>Bills</li>
                     <li>
                         <ul>
                             <li>
@@ -52,7 +57,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
 
                 </ul>
             </div>

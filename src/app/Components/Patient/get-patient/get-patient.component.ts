@@ -17,7 +17,7 @@ export class GetPatientComponent {
   faPlus = faPlus;
 
   constructor(public ps: PatientApiService, private router: Router) {
-    // this.data.getDoctorData().subscribe(data => {console.log(data);this.doctorsList=data});
+    this.getPatient()
   }
 
   ngOnInit() {
@@ -35,6 +35,7 @@ export class GetPatientComponent {
 
   updatePatient(item: Patient) {
     this.ps.patientData = item;
+    this.getPatient();
     this.router.navigate(['admin/update-patient']);
   }
 

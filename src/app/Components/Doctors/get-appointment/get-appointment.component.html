@@ -28,10 +28,6 @@
                             <th scope="col">Doctor Name</th>
                             <th scope="col">Appointment Date</th>
                             <th scope="col">Status</th>
-                            <th>
-                                <a title="Add Appointment" class="addApp" (click)="addApp()"><fa-icon
-                                        [icon]="faPlus"></fa-icon></a>
-                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,14 +44,6 @@
                                 ? "Cancelled"
                                 : "Pending"
                                 }}
-                            </td>
-                            <td class="actionBtn">
-                                <a class="actionBtn" *ngIf="app.status == null" (click)="confirmAppointment(app.id)"><fa-icon [icon]="faApprove"></fa-icon></a>
-                                <a class="actionBtn" *ngIf="app.status == true" (click)="cancelAppointment(app.id)"><fa-icon [icon]="faReject"></fa-icon></a>
-                                <a *ngIf="app.status == false" (click)="deleteApp(app.id)"><fa-icon [icon]="faTrash"></fa-icon></a>
-                                <!-- <label *ngIf="app.status == false" disabled>
-                                    Cannot Change Status
-                                </label> -->
                             </td>
                         </tr>
                     </tbody>

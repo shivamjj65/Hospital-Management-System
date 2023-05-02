@@ -18,6 +18,7 @@ export class GetDoctorsComponent {
   constructor(public ds:DoctorApiService, private router:Router) 
   {
     // this.data.getDoctorData().subscribe(data => {console.log(data);this.doctorsList=data});
+    this.getDoctor()
   }
 
   ngOnInit(){
