@@ -34,15 +34,18 @@ import {MatDialogModule } from '@angular/material/dialog';
 import { DashboardHomeComponent } from './Components/dashboard-home/dashboard-home.component';
 import { UpdatePatientComponent } from './Components/Patient/update-patient/update-patient.component';
 import { UpdateDoctorComponent } from './Components/Doctors/update-doctor/update-doctor.component';
-import { BookAppComponent } from './Components/Patient/book-app/book-app.component';
 import { BookAppointmentComponent } from './Components/Appointment/book-appointment/book-appointment.component';
 import { ShowAppointmentComponent } from './Components/Appointment/show-appointment/show-appointment.component';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { GenerateBillComponent } from './Components/Bills/generate-bill/generate-bill.component';
 import { ShowBillComponent } from './Components/Bills/show-bill/show-bill.component';
-import { ShowDocAppointmentComponent } from './Components/Appointment/show-doc-appointment/show-doc-appointment.component';
-
+import { LoginComponent } from './Components/login/login.component';
+import { SignupComponent } from './Components/signup/signup.component';
+import { AddPxComponent } from './Components/Prescription/add-px/add-px.component';
+import { GetPxComponent } from './Components/Prescription/get-px/get-px.component';
+import { CheckAppStatusComponent } from './Components/Appointment/check-app-status/check-app-status.component';
+import { GetAppointmentComponent } from './Components/Doctors/get-appointment/get-appointment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,12 +58,16 @@ import { ShowDocAppointmentComponent } from './Components/Appointment/show-doc-a
     DashboardHomeComponent,
     UpdatePatientComponent,
     UpdateDoctorComponent,
-    BookAppComponent,
     BookAppointmentComponent,
     ShowAppointmentComponent,
     GenerateBillComponent,
     ShowBillComponent,
-    ShowDocAppointmentComponent
+    LoginComponent,
+    SignupComponent,
+    AddPxComponent,
+    GetPxComponent,
+    CheckAppStatusComponent,
+    GetAppointmentComponent
   ],
   imports: [
     ReactiveFormsModule,

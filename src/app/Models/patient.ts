@@ -5,5 +5,5 @@ export class Patient {
     dateOfBirth:any;
     phoneNumber:any;
     address:string='';
-    userId = 0;
+    userId:number=null;
 }

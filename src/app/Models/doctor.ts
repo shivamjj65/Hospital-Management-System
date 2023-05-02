@@ -7,5 +7,5 @@ export class Doctor {
     address:string='';
     specialization:string='';
     fees:number=0;
-    userId = 0;
+    userId:number;
 }

@@ -36,6 +36,7 @@ export class DoctorApiService {
       }
     );
   }
+  
 
   updatedDoctorData:Doctor = new Doctor();
   updateDoctor(){
