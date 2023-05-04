@@ -9,7 +9,7 @@ import { Doctor } from 'src/app/Models/doctor';
 export class DoctorApiService {
 
   constructor(private http:HttpClient) { }
-  url = "https://localhost:7287/api/Doctors"
+  url = "https://hospitalmanagementsystemapi.azurewebsites.net/api/Doctors"
 
   // get list of doctors data and store into doctorsList
   doctorsList:Doctor[]=[]; //for getting list of doctor 
@@ -23,7 +23,7 @@ export class DoctorApiService {
   // get data from form and store into doctorData and post it into db via api
   doctorData:Doctor = new Doctor();
   postDoctor(){
-    return this.http.post('https://localhost:7287/api/Doctors',this.doctorData).subscribe(
+    return this.http.post('https://hospitalmanagementsystemapi.azurewebsites.net/api/Doctors',this.doctorData).subscribe(
       (response) => {
         console.log('response received',response);
       },
@@ -40,7 +40,7 @@ export class DoctorApiService {
 
   updatedDoctorData:Doctor = new Doctor();
   updateDoctor(){
-    return this.http.put("https://localhost:7287/api/Doctors/"+this.updatedDoctorData.id,this.updatedDoctorData).subscribe(
+    return this.http.put("https://hospitalmanagementsystemapi.azurewebsites.net/api/Doctors/"+this.updatedDoctorData.id,this.updatedDoctorData).subscribe(
       (response) => {                           //Next callback
         console.log('Updated',response);
         alert('Data Updated');

@@ -10,7 +10,7 @@ import { User } from 'src/app/Models/user';
 })
 export class AuthService {
 
-  private baseUrl: string = 'https://localhost:7287/api/Users/';
+  private baseUrl: string = 'https://hospitalmanagementsystemapi.azurewebsites.net/api/Users/';
   private userPayload:any;
   constructor(private http: HttpClient, private router: Router) {
     this.userPayload = this.decodedToken();

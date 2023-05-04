@@ -12,12 +12,12 @@ export class BillApiService {
 
   constructor(private myhttp: HttpClient) { }
 
-  billUrl: string = 'https://localhost:7287/api/Bills';
-  prescriptionUrl: string = 'https://localhost:7287/api/Prescriptions';
-  appointmentUrl: string = 'https://localhost:7287/api/Appointments';
-  doctorUrl: string = 'https://localhost:7287/api/Doctors';
-  patientUrl: string = 'https://localhost:7287/api/Patients';
-  userUrl: string = 'https://localhost:7287/api/Users';
+  billUrl: string = 'https://hospitalmanagementsystemapi.azurewebsites.net/api/Bills';
+  prescriptionUrl: string = 'https://hospitalmanagementsystemapi.azurewebsites.net/api/Prescriptions';
+  appointmentUrl: string = 'https://hospitalmanagementsystemapi.azurewebsites.net/api/Appointments';
+  doctorUrl: string = 'https://hospitalmanagementsystemapi.azurewebsites.net/api/Doctors';
+  patientUrl: string = 'https://hospitalmanagementsystemapi.azurewebsites.net/api/Patients';
+  userUrl: string = 'https://hospitalmanagementsystemapi.azurewebsites.net/api/Users';
 
 
   billlData: any[] = [];

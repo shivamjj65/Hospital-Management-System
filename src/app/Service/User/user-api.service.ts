@@ -10,8 +10,8 @@ import { User } from 'src/app/Models/user';
 export class UserApiService {
 
   constructor(private http:HttpClient) { }
-  url = "https://localhost:7287/api/Users"
-  updateUrl = "https://localhost:7287/api/Users/role";
+  url = "https://hospitalmanagementsystemapi.azurewebsites.net/api/Users"
+  updateUrl = "https://hospitalmanagementsystemapi.azurewebsites.net/api/Users/role";
    
   // get list of User data and store into usersList
   usersList:User[]=[]; //for getting list user 
@@ -28,7 +28,7 @@ export class UserApiService {
 
   updatedUser:User = new User();
   updateRole(){
-    return this.http.post("https://localhost:7287/api/Users/role"+this.updatedUser.id,this.updatedUser).subscribe(
+    return this.http.post("https://hospitalmanagementsystemapi.azurewebsites.net/api/Users/role"+this.updatedUser.id,this.updatedUser).subscribe(
       (response) => {                           //Next callback
         console.log('Updated',response);
         alert('Data Updated');

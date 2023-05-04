@@ -26,14 +26,14 @@ export class AppointmentApiService {
 
   appointmentData: any = [];
 
-  baseUrl = 'https://localhost:7287/api/Appointments';
-  doctorUrl = 'https://localhost:7287/api/Doctors';
-  approveUrl = 'https://localhost:7287/api/Appointments/approve';
-  rejectUrl = 'https://localhost:7287/api/Appointments/reject';
-  getPatientUrl = 'https://localhost:7287/api/Patients';
+  baseUrl = 'https://hospitalmanagementsystemapi.azurewebsites.net/api/Appointments';
+  doctorUrl = 'https://hospitalmanagementsystemapi.azurewebsites.net/api/Doctors';
+  approveUrl = 'https://hospitalmanagementsystemapi.azurewebsites.net/api/Appointments/approve';
+  rejectUrl = 'https://hospitalmanagementsystemapi.azurewebsites.net/api/Appointments/reject';
+  getPatientUrl = 'https://hospitalmanagementsystemapi.azurewebsites.net/api/Patients';
 
   appointmentByPatiendIdUrl =
-    'https://localhost:7287/api/Appointments/appointmentsByPatientId?patientId=';
+    'https://hospitalmanagementsystemapi.azurewebsites.net/api/Appointments/appointmentsByPatientId?patientId=';
 
   getAppointments() {
     return this.http.get(this.baseUrl);

@@ -8,7 +8,7 @@ import { Patient } from 'src/app/Models/patient';
 })
 export class PatientApiService {
   constructor(private http:HttpClient) { }
-  url = "https://localhost:7287/api/Patients"
+  url = "https://hospitalmanagementsystemapi.azurewebsites.net/api/Patients"
 
   // get list of Patient data and store into patientsList
   patientsList:Patient[]=[]; //for getting list patient 
@@ -24,7 +24,7 @@ export class PatientApiService {
   // get data from form and store into patientData and post it into db via api
   patientData:Patient = new Patient();
   postPatient(){
-    return this.http.post('https://localhost:7287/api/Patients',this.patientData).subscribe(
+    return this.http.post('https://hospitalmanagementsystemapi.azurewebsites.net/api/Patients',this.patientData).subscribe(
       (response) => {                           //Next callback
         console.log('response received',response);
       },
@@ -40,7 +40,7 @@ export class PatientApiService {
 
   patData:Patient = new Patient();  // data from get-patient row will be stored her
   updatePatient(){
-    return this.http.put("https://localhost:7287/api/Patients/"+this.patientData.id,this.patientData).subscribe(
+    return this.http.put("https://hospitalmanagementsystemapi.azurewebsites.net/api/Patients/"+this.patientData.id,this.patientData).subscribe(
       (response) => {                           //Next callback
         console.log('Updated',response);
         alert('Data Updated');

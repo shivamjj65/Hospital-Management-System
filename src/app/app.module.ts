@@ -5,6 +5,7 @@ import { FormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DatePipe } from '@angular/common';
+import { NgToastModule } from 'ng-angular-popup';
 
 import { GetDoctorsComponent } from './Components/Doctors/get-doctors/get-doctors.component';
 import { AddDoctorsComponent } from './Components/Doctors/add-doctors/add-doctors.component';
@@ -72,7 +73,7 @@ import { GetAppointmentComponent } from './Components/Doctors/get-appointment/ge
   imports: [
     ReactiveFormsModule,
     MatDialogModule, MatInputModule, MatButtonModule, MatCardModule, MatFormFieldModule,MatTableModule,
-    FontAwesomeModule,
+    FontAwesomeModule,NgToastModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
