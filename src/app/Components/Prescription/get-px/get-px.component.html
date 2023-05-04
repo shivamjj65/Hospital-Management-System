@@ -1,55 +1,35 @@
-
-<div class="header">
-    <h1>Prescription</h1>
-</div>
-
-<div class="container">
-    
-    
-<br>
-<br>
-<hr>
-
-<div class="col-md-3">
-              
-                <label for="name">Doctor Id</label>
-                <input type="text" name="doctorId" class="form-control" placeholder="doctor id" #doctorId="ngModel" [(ngModel)]="myval" (keyup)="display()">
-            </div>
-<table class="table table-hover">
-<thead class="thead-dark">
-    <tr>
-        
-        <th>AppointmentId</th>
-        <th>Patient Name</th>
-        <th>Doctor Name</th>
-        <th>Prescription Date</th>
-        <th>Details</th>
-        <th>Action</th>
-    </tr>
-</thead>
-<tbody>
-    <tr *ngFor="let b of presServices.listpres">
-        
-       <td>{{b.appointmentId}}</td>
-       <td>{{b.patient.name}}</td>
-       <td>{{b.doctor.name}}</td>
-       <td>{{b.prescriptionDate | date:'yyyy-MM-dd'}}</td>
-       <td>{{b.prescriptionDetails}}</td>
-       <td><div >
-         <div>
-         <button type="button"  class="btn btn-primary mr-1"   href="#" (click)="populatePres(b)"><span class="bi bi-pencil" ></span> Edit</button>
- 
-         
-         <button type="button" class="btn btn-danger" href="#" (click)="delete(b.id)"><span class="bi bi-pencil"></span> Delete</button>
-       </div>
-       
-       </div></td> 
-    </tr>
-
-</tbody>
-
-</table>
-
-
-
-</div>
+<section>
+  <div class="content">
+    <div class="container">
+        <label class="doctor" for="name">Enter Doctor Id</label>
+<input type="text" name="doctorId" class="form-control" placeholder="doctor id" #doctorId="ngModel" [(ngModel)]="myval"
+    (keyup)="display()">
+      <div class="title">
+        <h2 class="mb-5">Patient Data</h2>
+      </div>
+      <div class="table-responsive">
+        <table class="table custom-table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Patient Name</th>
+              <th scope="col">Prescription Date</th>
+              <th scope="col">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr scope="row" *ngFor="let b of presServices.listpres">
+              <td>{{b.appointmentId}}</td>
+              <td>{{b.patient.name}}</td>
+              <td>{{b.doctor.name}}</td>
+              <td>{{b.prescriptionDate | date:'yyyy-MM-dd'}}</td>
+              <td>{{b.prescriptionDetails}}</td>
+              <td><a class="btn" title="Update" (click)='populatePres(b)'><fa-icon [icon]="faPen"></fa-icon></a></td>
+              <td><a class="btn" title="Delete" (click)='deletePres(b.id)'><fa-icon [icon]="faTrash"></fa-icon></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

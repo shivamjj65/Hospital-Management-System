@@ -10,17 +10,25 @@ section {
   margin: auto;
 }
 
+.doctor{
+  text-align: center;
+  font-size: 18px;
+}
 
-a {
+/* a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-}
+} */
 
 a,
 a:hover {
+  color: #000 !important;
   text-decoration: none !important;
   cursor: pointer;
+}
+.btn{
+  color: #000;
 }
 
 .content {

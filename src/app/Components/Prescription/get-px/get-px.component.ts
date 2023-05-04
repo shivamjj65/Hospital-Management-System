@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PrescriptionApiService } from 'src/app/Service/Prescription/prescription-api.service';
 import { DatePipe } from '@angular/common';
 import { Prescription } from 'src/app/Models/prescription';
+import { faPencil, faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-get-px',
@@ -9,6 +10,8 @@ import { Prescription } from 'src/app/Models/prescription';
   styleUrls: ['./get-px.component.css']
 })
 export class GetPxComponent implements OnInit {
+  faPen=faPencil;
+  faTrash = faTrash;
  
   myval: number;
 
@@ -19,6 +22,7 @@ export class GetPxComponent implements OnInit {
   
    
   }
+
 display(){
   console.log('dis working')
   this.presServices.getPrescription().subscribe(data=>{
@@ -30,8 +34,6 @@ display(){
   populatePres(selectedPres:Prescription){
     console.log('working');
    
-   
-   
     let df=this.datePipe.transform(selectedPres.prescriptionDate,'yyyy-MM-dd');
     selectedPres.prescriptionDate=df;
   
@@ -39,7 +41,7 @@ display(){
   
    }
 
-   delete(id:number){
+   deletePres(id:number){
     if(confirm('Are you really want to delete this item')){
       this.presServices.deletePrescription(id).subscribe(data=>{
        

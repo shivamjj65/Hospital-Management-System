@@ -1,10 +1,87 @@
+<div class="page-wrapper bg-gra-02 p-b-100 font-poppins">
+
+    <div class="wrapper wrapper--w680">
+      <div class="card card-4">
+        <div class="card-body">
+          <div class="title">
+            <h2 class="title">Enter Details
+            </h2>
+          </div>
+          <form autocomplete="off" #myForm="ngForm" (ngSubmit)="myForm.form.valid && submit(myForm)">
+            <div class="row row-space">
+  
+                <input type="hidden" name="id" [value]="ps.prescriptionData.id">
+  
+              <div class="col-2">
+                <div class="input-group">
+                    <label class="label">Doctor Id
+                        <p class="text-danger nameReq" *ngIf="doctorId.invalid &&(doctorId.touched || doctorId.dirty)">
+                            Required</p>
+                    </label>
+                        <input type="text" name="doctorId" class="input--style-4"
+                        #doctorId="ngModel" [(ngModel)]="ps.prescriptionData.doctorId" (keyup)="displayName()"
+                        required>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <div class="input-group">
+                  <label class="label">Appointment Id
+                    <p class="text-danger nameReq"
+                    *ngIf="appointmentId.invalid &&(appointmentId.touched || appointmentId.dirty)">
+                      Required</p>
+                  </label>
+                  <input class="input--style-4" type="text" name="appointmentId" #appointmentId="ngModel" [(ngModel)]="ps.prescriptionData.appointmentId"
+                  (keyup)="validation()" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="row row-space">
+              <div class="col-2">
+                <div class="input-group">
+                  <label class="label">Prescription<p class="text-danger phReq"
+                    *ngIf="prescriptionDetails.invalid &&(prescriptionDetails.touched || prescriptionDetails.dirty)">
+                      Required</p></label>
+  
+                  <input class="input--style-4" type="tel" min="0" name="prescriptionDetails" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" #prescriptionDetails="ngModel" [(ngModel)]="ps.prescriptionData.prescriptionDetails"
+                  required>
+                </div>
+              </div>
+            </div>
+            <div class="row row-space">
+              <div class="col-2">
+                <div class="input-group">
+                  <label class="label">Date of Birth <input type="date" name="prescriptionDate" class="form-control"
+                    #prescriptionDate="ngModel"
+                    [(ngModel)]="ps.prescriptionData.prescriptionDate " required>
+                    <p class="text-danger dobReq" *ngIf="prescriptionDate.invalid && (prescriptionDate.touched||prescriptionDate.dirty)">Required</p>
+                  </label>
+  
+                </div>
+              </div>
+            </div>
+  
+            <div class="p-t-15">
+              <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- 
 <div class="container">
     <div class="formAdd">
         <form autocomplete="off" #myForm="ngForm" (ngSubmit)="myForm.form.valid && submit(myForm) ">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
-                        <input type="hidden" name="id" [value]="ps.prescriptionData.id">
+                        
                         <label for="name">Doctor Id</label>
                         <div *ngIf="doctorId.invalid &&(doctorId.touched || doctorId.dirty)" class="float-right">
                             <p class="text-danger">Required</p>
@@ -25,9 +102,6 @@
                             #appointmentId="ngModel" [(ngModel)]="ps.prescriptionData.appointmentId"
                             (keyup)="validation()" required>
                     </div>
-
-
-
 
                     <div class="col-md-3">
                         <label for="date" class="float-left">Prescription Date</label>
@@ -54,12 +128,6 @@
                             #patientId="ngModel" [(ngModel)]="ps.prescriptionData.patientId" (keyup)="patdetails()"
                             required>
                     </div>
-
-
-
-
-
-
                     <div class="col-md-11">
                         <label for="name">prescription</label>
                         <div *ngIf="prescriptionDetails.invalid &&(prescriptionDetails.touched || prescriptionDetails.dirty)"
@@ -107,4 +175,4 @@
         <th>{{ps.patientData.gender}}</th>
         <th>{{ps.patientData.phoneNumber}}</th>
     </table>
-</div>
+</div> -->
